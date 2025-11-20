@@ -54,7 +54,7 @@ Reconstruction Error = |Input - Reconstructed|
 Threshold Optimization (F1-maximization)
     ↓
 High Error → Anomaly | Low Error → Normal
-
+```
 
 ## Key Findings
 
