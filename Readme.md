@@ -23,12 +23,12 @@ Trained three unsupervised models on legitimate traffic only, comparing their ab
 
 **Model Comparison:**
 
-| Model | ROC-AUC | Macro-F1 | Speed | 
-|-------|---------|----------|-------|
-| PCA Reconstruction | 98.8% | 95.0% | Fastest |
-| Bayesian GMM | 99.0% | 94.0% | Slow |
-| Isolation Forest | 98.5% | 94.0% | Fast |
-
+|      Model        |ROC-AUC| Macro-F1| Speed  | 
+|-------------------|-------|---------|--------|
+| PCA Reconstruction| 98.8% |  95.0%  | Fastest|
+| Bayesian GMM      | 99.0% |  94.0%  |  Slow  |
+| Isolation Forest  | 98.5% |  94.0%  |  Fast  |
+  
 **Winner:** PCA Reconstruction - best balance of accuracy, speed, and interpretability.
 
 ## Technical Approach
@@ -54,7 +54,7 @@ Reconstruction Error = |Input - Reconstructed|
 Threshold Optimization (F1-maximization)
     ↓
 High Error → Anomaly | Low Error → Normal
-```
+
 
 ## Key Findings
 
@@ -80,16 +80,14 @@ High Error → Anomaly | Low Error → Normal
 **UNSW-NB15** - Network Intrusion Detection Dataset (2015)
 - 175,341 network flow records
 - 49 features (flow stats, TCP flags, timing, payload)
-- 9 attack categories: Fuzzers, Analysis, Backdoors, DoS, Exploits, Generic, Reconnaissance, Shellcode, Worms
-- Source: https://research.unsw.edu.au/projects/unsw-nb15-dataset
 
 ## Installation
-```bash
+   bash
 pip install pandas numpy scikit-learn matplotlib seaborn joblib
-```
+
 
 ## Usage
-```python
+python
 import joblib
 import pandas as pd
 
@@ -100,17 +98,17 @@ model = joblib.load('pca_anomaly_detection.joblib')
 flow_data = pd.read_csv('network_flows.csv')
 predictions = model.predict(flow_data)
 # Output: 0 = normal, 1 = anomaly
-```
+
 
 ## Project Structure
-```
+
 unsw-anomaly-detection/
 ├── unsw.csv                        # UNSW-NB15 dataset
 ├── anomaly_detection.ipynb         # Full analysis notebook
 ├── pca_anomaly_detection.joblib    # Trained model
 ├── requirements.txt
 └── README.md
-```
+
 
 ## Why This Matters
 
