@@ -99,17 +99,6 @@ flow_data = pd.read_csv('network_flows.csv')
 predictions = model.predict(flow_data)
 # Output: 0 = normal, 1 = anomaly
 
-
-## Project Structure
-
-unsw-anomaly-detection/
-├── unsw.csv                        # UNSW-NB15 dataset
-├── anomaly_detection.ipynb         # Full analysis notebook
-├── pca_anomaly_detection.joblib    # Trained model
-├── requirements.txt
-└── README.md
-
-
 ## Why This Matters
 
 **Zero-day detection capability:**
